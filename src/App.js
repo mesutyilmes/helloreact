@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import User from './components/User';
 import './App.css';
 
 class App extends Component {
+  
   render() {
+    const myName = "Mesut";
     return (
       <div className="App">
-       <p className="App-header">Selam Mesut Test ediliyor cimen</p>
-       <img src={logo} className="App-logo" alt="logo" />
+        <h1>Hello World!</h1>
+        <h2>Mesut</h2>
+        <h3>Cimen</h3>
+        <h4>{myName.toUpperCase()}</h4>
+        <div>
+          <h1>USER COMPONENT</h1>
+           <User/>
+        </div>
       </div>
+      
     );
   }
 }
