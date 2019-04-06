@@ -6,7 +6,7 @@ import React, { Component } from 'react'
       <div>
         <form>
             <input type="text"/>
-            <button>Gonder</button>
+            <button>Gonder!</button>
         </form>
       </div>
     )
