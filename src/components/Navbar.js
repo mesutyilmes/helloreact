@@ -1,9 +1,9 @@
 import React from 'react'
 
- function Navbar() {
+ function Navbar(props) {
   return (
     <div>
-      Selaminaleykum
+      {props.title}
     </div>
   )
   
