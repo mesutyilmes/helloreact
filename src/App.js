@@ -6,15 +6,13 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <Navbar title="User Informations"/>
+        <Navbar title="Calisanlar"/>
         <hr/>
         <User
           name = "Mesut Yilmaz"
           department = "Developer"
-          salary = "6000"
         />
         <User
-          name = "Cimen Yilmaz"
           department = "Operation"
           salary = "5000"
         />
