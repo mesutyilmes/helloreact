@@ -7,9 +7,8 @@ import PropTypes from 'prop-types'
 
 onClickEve(number,name,e)
 {
-    console.log(number);
-    console.log(name);
-    console.log("=================")
+   this.setState({isVisible :!this.state.isVisible});
+   console.log(this.state);
 }
 
   render() {
