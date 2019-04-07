@@ -13,8 +13,13 @@ class App extends Component {
           department = "Developer"
         />
         <User
+          name = "Cimen Yilmaz Test"
+          department = "Operations"
+          salary = "5000"
+        />
+        <User
           name = "Cimen Yilmaz"
-          department = "Operation"
+          department = "Operations"
           salary = "5000"
         />
       </div>

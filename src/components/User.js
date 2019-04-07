@@ -4,6 +4,14 @@ import PropTypes from 'prop-types'
 
  class User extends Component {
     state = {isVisible : true}
+
+onClickEve(number,name,e)
+{
+    console.log(number);
+    console.log(name);
+    console.log("=================")
+}
+
   render() {
     //Destructing
     const {name,department,salary} = this.props
@@ -11,7 +19,7 @@ import PropTypes from 'prop-types'
     return (
         <div className="col-md-8 mb-4">
             <div className="card-header d-flex justify-content-between">
-                <h4 className="d-inline">{name}</h4>
+                <h4 className="d-inline" onClick={this.onClickEve.bind(this,34,"Mesut")}>{name}</h4>
                 <i className="far fa-trash-alt" style={{cursor:"pointer"}}></i>
             </div>
             {
@@ -30,7 +38,8 @@ import PropTypes from 'prop-types'
 
 User.propTypes = {
     name : PropTypes.string.isRequired,
-    salary : PropTypes.string.isRequired
+    salary : PropTypes.string.isRequired,
+    department : PropTypes.string.isRequired
 }
 User.defaultProps = {
     name : "Bilgi yok.",
