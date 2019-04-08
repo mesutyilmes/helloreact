@@ -24,12 +24,23 @@ class App extends Component {
       }
     ]
   }
+  deleteUser = (id) =>
+  {
+    console.log("buraya gecti");
+    console.log(id);
+    this.setState(
+      {
+        calisanlar : this.state.calisanlar.filter(user => id!==user.id)
+      }
+    )
+  }
   render() {
     return (
       <div className="container">
         <Navbar title="Calisanlar"/>
         <hr/>
         <Users
+         deleteUser = {this.deleteUser}
          workers = {this.state.calisanlar}
         />
       </div>
