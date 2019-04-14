@@ -3,12 +3,23 @@ import React, { Component } from 'react'
 
 const UserContext = React.createContext();
 
+const reducer = (state, action) => {
+    switch (action.type) {
+        case "DELETE_USER":
+            return {
+                ...state,
+                workers: state.workers.filter(workers => action.payload !== workers.id)
+            }
+        default:
+            return state
+    }
+}
 export class UserProvider extends Component {
     state = {
         workers: [
             {
                 id: 1,
-                name: "Mesut",
+                name: "Mesut Yilmaz",
                 department: "Developer",
                 salary: "7700"
             },
@@ -25,7 +36,11 @@ export class UserProvider extends Component {
                 salary: "9000"
             }
         ],
-        yilmes :"Hello Abi"
+        yilmes: "Hello Abi",
+
+        dispatche : action => {
+            this.setState(state => reducer(state,action))
+          }
     }
     render() {
         return (
