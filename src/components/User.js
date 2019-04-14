@@ -11,7 +11,7 @@ class User extends Component {
     }
     sil = (dispatche,e) => {
         const {id} = this.props;
-        dispatche({type:"DELETE_USER",payload:id});  
+        dispatche({types:"DELETE_USER",payload:id});  
 
     }
 

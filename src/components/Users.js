@@ -7,11 +7,10 @@ class Users extends Component {
       <UserConsumer>
         {
           value => {
-            const { workers,yilmes } = value;
+            const { workers } = value;
             return (
 
               <div>
-                {yilmes}
                 {
                   workers.map(worker => {
                     return (
