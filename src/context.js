@@ -24,7 +24,8 @@ export class UserProvider extends Component {
                 department: "Retailler",
                 salary: "9000"
             }
-        ]
+        ],
+        yilmes :"Hello Abi"
     }
     render() {
         return (
