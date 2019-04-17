@@ -3,15 +3,15 @@ import PropTypes from 'prop-types'
 import UserConsumer from '../context'
 
 class User extends Component {
-    state = { isVisible: true }
+    state = { isVisible: false }
 
     onClickEve(number, name, e) {
         this.setState({ isVisible: !this.state.isVisible });
         console.log(this.state);
     }
-    sil = (dispatche,e) => {
-        const {id} = this.props;
-        dispatche({types:"DELETE_USER",payload:id});  
+    sil = (dispatche, e) => {
+        const { id } = this.props;
+        dispatche({ types: "DELETE_USER", payload: id });
 
     }
 
@@ -23,23 +23,24 @@ class User extends Component {
             <UserConsumer>
                 {
                     value => {
-                        const {dispatche} = value;
+                        const { dispatche } = value;
                         return (
                             <div className="col-md-8 mb-4">
-                                <div className="card-header d-flex justify-content-between">
-                                    <h4 className="d-inline" onClick={this.onClickEve.bind(this, 34, "Mesut")}>{name}</h4>
-                                    <i onClick={this.sil.bind(this,dispatche)} className="far fa-trash-alt" style={{ cursor: "pointer" }}></i>
+                                <div className="card" style={isVisible ? {backgroundColor : "#62848d", color: "white"} : null}>
+                                    <div className="card-header d-flex justify-content-between">
+                                        <h4 className="d-inline" onClick={this.onClickEve.bind(this, 34, "Mesut")}>{name}</h4>
+                                        <i onClick={this.sil.bind(this, dispatche)} className="far fa-trash-alt" style={{ cursor: "pointer" }}></i>
+                                    </div>
+                                    {
+                                        isVisible ?
+                                            <div className="card-body">
+                                                <p className="card-text">Maas : {salary}</p>
+                                                <p className="card-text">Department : {department}</p>
+                                            </div>
+                                            : null
+                                    }
                                 </div>
-                                {
-                                    isVisible ?
-                                        <div className="card-body">
-                                            <p className="card-text">Maas : {salary}</p>
-                                            <p className="card-text">Department : {department}</p>
-                                        </div>
-                                        : null
-                                }
                             </div>
-
                         )
                     }
                 }

@@ -50,9 +50,11 @@ export class UserProvider extends Component {
         ],
         yilmes: "Hello Abi",
 
-        dispatche : action => {
-            this.setState(state => reduceret(state,action))
-          }
+        dispatche: action => {
+            this.setState(
+                state => reduceret(state, action)
+            )
+        }
     }
     render() {
         return (
