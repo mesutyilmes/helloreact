@@ -40,6 +40,12 @@ export class UserProvider extends Component {
                 name: "Firat Kara",
                 department: "Scherif",
                 salary: "3000"
+            },
+            {
+                id: 5,
+                name: "Mustafa Yilmaz",
+                department: "Reasistance",
+                salary: "3000"
             }
         ],
         yilmes: "Hello Abi",
