@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import posed from 'react-pose';
-
+var uniqid = require('uniqid');
 const Animation = posed.div({
     visible: {
         opacity: 1,
@@ -30,11 +30,13 @@ class AddUser extends Component {
             }
         )
     }
+    
     /*
     changeName = (e) => {
         this.setState({
             name : e.target.value
         })
+        
     }
     changeDepartment = (e) => {
         this.setState({
@@ -47,12 +49,26 @@ class AddUser extends Component {
         })
     }
     */
-
+    
     changeInput = (e) => {
         //console.log([e.target.name])
         this.setState({
             [e.target.name]: e.target.value
         })
+    }
+
+    addUser= (e)=>{
+        e.preventDefault();
+        console.log(this.state.name);
+        const {name,department,salary} = this.state;
+        
+        const newUser = {
+            id:uniqid(), 
+            name:name,
+            salary:salary,
+            department:department
+        }
+        console.log(newUser)
     }
     render() {
         const { visible, name, department, salary } = this.state;
@@ -64,7 +80,7 @@ class AddUser extends Component {
                         <div className="card-header">
                             <h4>Add User Form</h4>
                             <div className="card-body">
-                                <form>
+                                <form onSubmit={this.addUser}>
                                     <div className="form-group">
                                         <label htmlFor="name">Name</label>
                                         <input type="text" name="name" id="id" placeholder="Enter Name" className="form-control" value={name} onChange={this.changeInput} />
