@@ -10,6 +10,16 @@ const reduceret = (state, action) => {
                 ...state,
                 workers: state.workers.filter(workers => action.payload !== workers.id)
             }
+        case "ADD_USER":
+            console.log(action.payload)
+            return{
+                /*
+                ...state,
+                workers : state.workers.concat(action.payload)
+                */
+               ...state,
+               workers : [...state.workers,action.payload]
+            }
         default:
             return state
     }
@@ -44,7 +54,7 @@ export class UserProvider extends Component {
             {
                 id: 5,
                 name: "Mustafa Yilmaz",
-                department: "Reasistance",
+                department: "Resistance",
                 salary: "3000"
             }
         ],
